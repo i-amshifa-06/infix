@@ -1,22 +1,27 @@
-def infix_to_postfix(exp):
-    p = {'+':1,'-':1,'*':2,'/':2}
-    s = []
-    post = ""
-    for ch in exp:
-        if ch.isalnum():
-            post += ch
-        elif ch == '(':
-            s.append(ch)
-        elif ch == ')':
-            while s[-1] != '(':
-                post += s.pop()
-            s.pop()
-        else:
-            while s and s[-1] != '(' and p[ch] <= p.get(s[-1],0):
-                post += s.pop()
-            s.append(ch)
-    while s:
-        post += s.pop()
-    return post
+queue = []
 
-print(infix_to_postfix("a+(b*c-d)/e"))
+queue.append(10)      # Enqueue
+queue.append(20)
+queue.append(30)
+
+print("Queue:", queue)
+
+print("Dequeued:", queue.pop(0))  # Dequeue
+
+print("Queue:", queue)
+
+
+
+
+
+
+def merge_sort(a):
+    if len(a) <= 1: return a
+    mid = len(a)//2
+    left = merge_sort(a[:mid])
+    right = merge_sort(a[mid:])
+    return sorted(left + right)
+
+arr = [38, 27, 43, 3, 9]
+print("Before:", arr)
+print("After :", merge_sort(arr))
