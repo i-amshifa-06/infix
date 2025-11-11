@@ -1,31 +1,31 @@
-queue = []
+// Generic Class & Generic Method Demo
 
-queue.append(10)      # Enqueue
-queue.append(20)
-queue.append(30)
+class MyClass<T> {
+    T value;
+    MyClass(T value) {
+        this.value = value;
+    }
+    void display() {
+        System.out.println("Value: " + value);
+    }
+}
 
-print("Queue:", queue)
+public class GenericDemo {
 
-print("Dequeued:", queue.pop(0))  # Dequeue
+    // Generic Method
+    public static <T> void printData(T data) {
+        System.out.println("Data: " + data);
+    }
 
-print("Queue:", queue)
+    public static void main(String[] args) {
 
+        MyClass<Integer> obj1 = new MyClass<>(10);
+        MyClass<String> obj2 = new MyClass<>("Hello");
 
+        obj1.display();
+        obj2.display();
 
-
-
-
-
-
-
-
-def merge_sort(a):
-    if len(a) <= 1: return a
-    mid = len(a)//2
-    left = merge_sort(a[:mid])
-    right = merge_sort(a[mid:])
-    return sorted(left + right)
-
-arr = [38, 27, 43, 3, 9]
-print("Before:", arr)
-print("After :", merge_sort(arr))
+        printData(50);
+        printData("Java Programming");
+    }
+}
