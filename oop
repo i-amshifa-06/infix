@@ -1,0 +1,27 @@
+package dept;   
+
+class CSE {
+    void show() { System.out.println("CSE: Java, DS, DBMS"); }
+}
+
+class ECE {
+    void show() { System.out.println("ECE: Digital Electronics, Signals"); }
+}
+
+class ME {
+    void show() { System.out.println("ME: Thermodynamics, Fluid Mechanics"); }
+}
+
+class CE {
+    void show() { System.out.println("CE: Building Materials, Mechanics"); }
+}
+
+public class DeptMain {
+    public static void main(String[] args) {
+
+        new CSE().show();
+        new ECE().show();
+        new ME().show();
+        new CE().show();
+    }
+}
